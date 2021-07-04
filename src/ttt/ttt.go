@@ -86,7 +86,7 @@ func (b *Board)Play(sx,sy,i int) (string,int) {
 			b.print()
 			}
 		b.print()
-		i=i+1
+		return "nowin",i+1
 	} else if temp == 1 {
 		return "1win",i+1
 	} else if temp == 2 {

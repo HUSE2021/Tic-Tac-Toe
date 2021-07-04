@@ -18,7 +18,7 @@ func TestTTT(t *testing.T) {
 	//o.x
 	//o.x
 	//o..  is 1 win
-	result,i= board.Play(1,3,5)
+	result,i= board.Play(1,3,i)
 	if expected != result {
 		t.Errorf("Test fail expected: %s, result: %s\n", expected, result)
 	}
