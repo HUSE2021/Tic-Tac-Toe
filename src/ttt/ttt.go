@@ -46,11 +46,27 @@ func (b *Board) get(x, y int) string {
 }
 
 func (b *Board) print() {
-	
+	var i int
+	var j int
+
+	for i = 0; i < 3; i++ {
+		for j = 0; j < 3; j++ {
+			fmt.Printf(b.get(i, j))
+		}
+		fmt.Printf("\n")
+	}
 }
 
 func (b *Board) CheckWin() int {
-
+    if (b.tokens[0] == b.tokens[1] && b.tokens[1] == b.tokens[2]) || (b.tokens[0] == b.tokens[3] && b.tokens[3] == b.tokens[6]) || (b.tokens[0] == b.tokens[4] && b.tokens[4] == b.tokens[8]) {
+		return b.tokens[0]
+	} else if (b.tokens[3] == b.tokens[4] && b.tokens[4] == b.tokens[5]) || (b.tokens[1] == b.tokens[4] && b.tokens[4] == b.tokens[7]) || (b.tokens[2] == b.tokens[4] && b.tokens[4] == b.tokens[6]) {
+		return b.tokens[4]
+	} else if (b.tokens[6] == b.tokens[7] && b.tokens[7] == b.tokens[8]) || (b.tokens[2] == b.tokens[5] && b.tokens[5] == b.tokens[8]) {
+		return b.tokens[8]
+	} else {
+		return 0
+	}
 }
 
 func NewGame() *Board{
